@@ -1,0 +1,45 @@
+<p class="text-xl">Cocktails</p>
+
+<p>Search cocktails by first letter</p>
+
+<div class="mb-5">
+    <input [(ngModel)]="drink" (ngModelChange)="searchCocktel($event)"   type="text" id="small-input"
+        class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="py-3 px-6">
+                    ID
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Category
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Instructions
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Image
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let item of drinksList" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{item.idDrink}}
+                    </th>
+                    <td class="py-4 px-6">
+                        {{item.strCategory}}
+                    </td>
+                    <td class="py-4 px-6">
+                        {{item.strInstructions}}
+                    </td>
+                    <td class="py-4 px-6">
+                        <img src="{{item.strDrinkThumb}}">
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</div>
