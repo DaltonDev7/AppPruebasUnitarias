@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   nasaApi: "https://api.nasa.gov",
   cocktailApi: "https://www.thecocktaildb.com",
-  nasaKey: "48lT68JP0RfFUE4RJ6VmGfnQZA6n69WnlkQlFN1y"
+  nasaKey: "48lT68JP0RfFUE4RJ6VmGfnQZA6n69WnlkQlFN1y",
+  taskApi: "https://localhost:44344/api"
 };
 
 /*

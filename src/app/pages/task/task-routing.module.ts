@@ -4,11 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskAddComponent } from './components/task-add/task-add.component';
 import { TaskEditComponent } from './components/task-edit/task-edit.component';
+import { TaksResolver } from './resolvers/taks.resolver';
+import { GetTasksIdResolver } from './resolvers/get-tasks-id.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: TaskListComponent
+    component: TaskListComponent,
+    resolve: {
+      tasks: TaksResolver
+    }
   },
   {
     path: 'add',
@@ -16,7 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'edit/:id',
-    component: TaskEditComponent
+    component: TaskEditComponent,
+    resolve: {
+      task : GetTasksIdResolver
+    }
   }
 ]
 

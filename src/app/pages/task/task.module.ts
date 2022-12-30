@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskRoutingModule } from './task-routing.module';
-import { TaskService } from './services/task.service';
 import { TaskAddComponent } from './components/task-add/task-add.component';
 import { TaskEditComponent } from './components/task-edit/task-edit.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TaskService } from './services/task.service';
+import { TaksResolver } from './resolvers/taks.resolver';
+import { GetTasksIdResolver } from './resolvers/get-tasks-id.resolver';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    TaskService
+    TaskService,
+    TaksResolver,
+    GetTasksIdResolver
   ]
 })
 export class TaskModule { }
